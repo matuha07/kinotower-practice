@@ -9,6 +9,8 @@ use Illuminate\Database\Seeder;
 use App\Models\Category;
 use App\Models\Gender;
 use App\Models\Country;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -47,6 +49,12 @@ class DatabaseSeeder extends Seeder
         Category::factory()->create([ 'name' => 'Sport']);
         Category::factory()->create([ 'name' => 'Drama']);
         Category::factory()->create([ 'name' => 'Horror']);
+
+        Admin::factory()->create([
+            'username' => 'Maksim',
+            'email' => 'max@max.max',
+            'password' => Hash::make('123456')
+        ]);
 
 
 
