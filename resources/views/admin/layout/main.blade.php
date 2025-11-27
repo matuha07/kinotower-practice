@@ -191,8 +191,14 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{route('films.index')}}" class="nav-link">
-                            <i class="bi bi-android2"></i>
+                            <i class="bi bi-amd"></i>
                             <p>Films</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('users.index')}}" class="nav-link">
+                            <i class="bi bi-tux"></i>
+                            <p>Users</p>
                         </a>
                     </li>
                 </ul>
