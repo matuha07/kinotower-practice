@@ -15,15 +15,19 @@
                 <div class="mt-4">
                     <label class="form-label" for="parent_id">Parent genre</label>
                     <select name="parent_id" id="parent_id" class="form-select">
+
                         <option value="">No parent genre</option>
                         @foreach($categories as $itemCategory)
+                            @unless(isset($category) && $category->id === $itemCategory->id)
                             <option @selected(isset($category)
                                     && $category->itemCategory
                                     && $category->itemCategory->id === $itemCategory->id)
                                     value="{{ $itemCategory->id }}">
                                 {{ $itemCategory->name }}
                             </option>
+                            @endunless
                         @endforeach
+
                     </select>
                 </div>
                 <div class="mt-4">
