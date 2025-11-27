@@ -20,12 +20,10 @@ class Review extends Model
         'message',
         'is_approved'
     ];
-
-    public function film() {
+    public function film(){
         return $this->belongsTo(Film::class);
     }
-
-    public function rating() {
-        return $this->belongsTo(Rating::class);
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

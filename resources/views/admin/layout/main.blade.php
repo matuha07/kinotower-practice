@@ -201,6 +201,12 @@
                             <p>Users</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{route('reviews.index')}}" class="nav-link">
+                            <i class="bi bi-nvidia"></i>
+                            <p>Review</p>
+                        </a>
+                    </li>
                 </ul>
                 <!--end::Sidebar Menu-->
             </nav>

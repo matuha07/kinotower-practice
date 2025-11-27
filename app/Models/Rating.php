@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Rating extends Model
 {
-
     /**
      * The attributes that are mass assignable.
      *
@@ -15,13 +15,12 @@ class Rating extends Model
     protected $fillable = [
         'film_id',
         'user_id',
-        'ball'
+        'ball',
     ];
-    public function film() {
+    public function film(){
         return $this->belongsTo(Film::class);
     }
-
-    public function review() {
-        return $this->belongsTo(Review::class);
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

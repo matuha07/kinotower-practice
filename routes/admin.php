@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FilmController;
 use App\Http\Controllers\Admin\FilmCategoryController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\ReviewController;
 
 
 use Illuminate\Support\Facades\Route;
@@ -30,5 +31,11 @@ Route::middleware(['auth:admin'])->group(function() {
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::post('/users/{id}/destroy', [UserController::class, 'destroy'])->name('users.destroy');
     Route::post('/users/{id}/restore', [UserController::class, 'restore'])->name('users.restore');
+    Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
+    Route::post('/reviews/{id}/approve', [ReviewController::class, 'approve'])->name('reviews.approve');
+    Route::post('/reviews/{id}/reject', [ReviewController::class, 'reject'])->name('reviews.reject');
+    Route::delete('/reviews/{id}', [ReviewController::class, 'destroy'])->name('reviews.destroy');
+
+
 });
 

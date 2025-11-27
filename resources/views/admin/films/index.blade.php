@@ -32,6 +32,7 @@
                     <div class="card-footer mt-auto d-flex justify-content-between">
                         <a class="btn btn-outline-warning" href="{{ route('films.edit', $film->id) }}">Edit</a>
                         <a class="btn btn-outline-info" href="{{ route('films.show', $film->id) }}">View</a>
+                        <a class="btn btn-outline-info" href="{{ route('films.categories', $film->id) }}">Genre</a>
 
                         <form action="{{ route('films.destroy', $film->id) }}" method="POST">
                             @csrf
