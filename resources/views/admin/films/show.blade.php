@@ -27,6 +27,26 @@
                     </div>
                 </div>
             </div>
+                <table class="table mt-5">
+                    <thead>
+                    <th>id</th>
+                    <th>user</th>
+                    <th>rating</th>
+                    <th>created at</th>
+                    </thead>
+                    @foreach($ratings as $rating)
+                        <tbody>
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $rating->user()->withTrashed()->first()->fio}}</td>
+                            <td>{{ $rating->ball }}</td>
+                            <td>{{ $rating->created_at }}</td>
+                        </tr>
+                        </tbody>
+                    @endforeach
+                </table>
+
+
         </div>
     </div>
 @endsection

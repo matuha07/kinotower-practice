@@ -7,6 +7,7 @@ use App\Models\Country;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Film;
+use App\Models\Rating;
 
 
 class FilmController extends Controller
@@ -45,7 +46,8 @@ class FilmController extends Controller
     public function show(string $id)
     {
         $film = film::findOrFail($id);
-        return view('admin.films.show', compact('film'));
+        $ratings = Rating::where('film_id', $id)->get();
+        return view('admin.films.show', compact('film', 'ratings'));
     }
 
     /**
