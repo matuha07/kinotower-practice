@@ -56,7 +56,6 @@ class FilmController extends Controller
                 'message' => 'Film not found',
             ]);
         }
-
         return response()->json(new FilmResource($film));
     }
 
