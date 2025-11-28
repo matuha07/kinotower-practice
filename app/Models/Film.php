@@ -28,6 +28,10 @@ class Film extends Model
         return $this->belongsToMany(Category::class, 'category_films');
     }
 
+    public $casts =[
+      'year_of_issue'=> 'integer',
+    ];
+
     public function country() {
         return $this->belongsTo(Country::class);
     }
